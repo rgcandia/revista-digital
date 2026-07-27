@@ -85,10 +85,21 @@ export default function RevistaDigital() {
             drawShadow
             flippingTime={600}
             usePortrait={mobile}
+            startZIndex={0}
+            autoSize
+            maxShadowOpacity={0.5}
+            showCover
+            mobileScrollSupport
+            clickEventForward
+            useMouseEvents
+            swipeDistance={0}
+            showPageCorners
+            disableFlipByClick={false}
             startPage={0}
             onFlip={onFlip}
             ref={flipRef}
             className="revista-flipbook"
+            style={{}}
           >
             {revistaData.pages.map((page: Page) => (
               <div key={page.id} className="revista-page">
