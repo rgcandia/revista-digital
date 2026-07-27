@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Container ─────────────────────────────────────────── */
+
+.revista-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100vh;
+  min-height: 0;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+
+.revista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.revista-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #032960;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.revista-meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.15rem;
+}
+
+.revista-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.revista-btn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  white-space: nowrap;
+}
+
+.revista-btn:hover:not(:disabled) {
+  background: #f8fafc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.revista-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.revista-page-num {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  min-width: 4.5rem;
+  text-align: center;
+}
+
+/* ─── Mobile controls ─────────────────────────────────────── */
+
+.revista-mobile-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  padding: 0.25rem 0;
+}
+
+/* ─── Flipbook wrapper ────────────────────────────────────── */
+
+.revista-flip-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.revista-flipbook {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.revista-page {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.revista-page-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.revista-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+/* ─── Thumbnails ──────────────────────────────────────────── */
+
+.revista-thumbnails {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+  flex-shrink: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.revista-thumb {
+  flex-shrink: 0;
+  width: 52px;
+  height: 70px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  transition: border-color 0.15s, opacity 0.15s;
+  opacity: 0.55;
+}
+
+.revista-thumb:hover {
+  opacity: 0.85;
+}
+
+.revista-thumb--active {
+  border-color: #032960;
+  opacity: 1;
+}
+
+.revista-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .revista-container {
+    height: auto;
+    min-height: 100vh;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .revista-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .revista-title {
+    font-size: 1.15rem;
+  }
+
+  .revista-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .revista-btn {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .revista-flip-wrapper {
+    min-height: 400px;
+  }
+
+  .revista-thumb {
+    width: 40px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 480px) {
+  .revista-flip-wrapper {
+    min-height: 300px;
+  }
+
+  .revista-thumb {
+    width: 32px;
+    height: 44px;
+  }
+}

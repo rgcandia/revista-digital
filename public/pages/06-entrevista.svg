@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="595" height="842" viewBox="0 0 595 842">
+  <rect width="595" height="842" fill="#fafafa"/>
+  <text x="50" y="55" font-family="sans-serif" font-size="10" fill="#032960" font-weight="600" letter-spacing="2">INSTITUCIONAL</text>
+  <text x="50" y="100" font-family="Georgia,serif" font-size="32" font-weight="700" fill="#1a1a2e">Entrevista al</text>
+  <text x="50" y="140" font-family="Georgia,serif" font-size="32" font-weight="700" fill="#1a1a2e">director</text>
+  <line x1="50" y1="160" x2="300" y2="160" stroke="#032960" stroke-width="3"/>
+
+  <text x="50" y="200" font-family="Georgia,serif" font-size="14" fill="#333">
+    <tspan x="50" dy="0" font-style="italic">"Este año logramos consolidar proyectos que veníamos</tspan>
+    <tspan x="50" dy="22" font-style="italic">soñando hace tiempo", nos cuenta el director del</tspan>
+    <tspan x="50" dy="22" font-style="italic">colegio, haciendo un balance del ciclo lectivo 2026</tspan>
+    <tspan x="50" dy="22" font-style="italic">y compartiendo los desafíos para el próximo año.</tspan>
+
+    <tspan x="50" dy="40" font-weight="700" fill="#032960">— ¿Cuál es el balance de este año?</tspan>
+    <tspan x="50" dy="22" font-weight="400">Muy positivo. Pudimos retomar muchas actividades que</tspan>
+    <tspan x="50" dy="20">antes no se podían hacer. La feria de ciencias, las</tspan>
+    <tspan x="50" dy="20">olimpiadas, el acto de cierre... Ver a los chicos</tspan>
+    <tspan x="50" dy="20">entusiasmados es lo que nos motiva día a día.</tspan>
+
+    <tspan x="50" dy="40" font-weight="700" fill="#032960">— ¿Qué proyectos vienen para 2027?</tspan>
+    <tspan x="50" dy="22" font-weight="400">Queremos fortalecer el área de tecnología, incorporar</tspan>
+    <tspan x="50" dy="20">más herramientas digitales en el aula y seguir</tspan>
+    <tspan x="50" dy="20">trabajando en la articulación entre niveles.</tspan>
+
+    <tspan x="50" dy="40" font-weight="700" fill="#032960">— ¿Algo que quiera destacar?</tspan>
+    <tspan x="50" dy="22" font-weight="400">El compromiso de las familias y el equipo docente.</tspan>
+    <tspan x="50" dy="20">La comunidad educativa de Norbridge es extraordinary</tspan>
+    <tspan x="50" dy="20">y eso se nota en cada evento y en cada proyecto.</tspan>
+  </text>
+
+  <rect x="395" y="580" width="150" height="56" rx="8" fill="#032960"/>
+  <text x="470" y="614" text-anchor="middle" font-family="sans-serif" font-size="10" fill="white" font-weight="600">LEER ENTREVISTA COMPLETA</text>
+  <text x="470" y="628" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,.6)">en la edición digital</text>
+
+  <text x="50" y="800" font-family="sans-serif" font-size="9" fill="#ccc">REVISTA NORBRIDGE · JULIO 2026 · PÁGINA 19</text>
+</svg>

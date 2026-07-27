@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="595" height="842" viewBox="0 0 595 842">
+  <rect width="595" height="842" fill="#fafafa"/>
+  <text x="50" y="80" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#032960">Índice</text>
+  <line x1="50" y1="95" x2="200" y2="95" stroke="#032960" stroke-width="3"/>
+
+  <text x="50" y="150" font-family="sans-serif" font-size="11" fill="#999" text-transform="uppercase">Inicial</text>
+  <text x="50" y="180" font-family="Georgia,serif" font-size="18" fill="#1a1a2e">Acto de cierre del ciclo lectivo</text>
+  <text x="50" y="205" font-family="sans-serif" font-size="12" fill="#666">Los más pequeños celebraron el final del año con un emotivo acto.</text>
+  <text x="545" y="180" text-anchor="end" font-family="sans-serif" font-size="14" font-weight="600" fill="#032960">3</text>
+
+  <line x1="50" y1="225" x2="545" y2="225" stroke="#eee" stroke-width="1"/>
+
+  <text x="50" y="260" font-family="sans-serif" font-size="11" fill="#999" text-transform="uppercase">Primaria</text>
+  <text x="50" y="290" font-family="Georgia,serif" font-size="18" fill="#1a1a2e">Feria de ciencias 2026</text>
+  <text x="50" y="315" font-family="sans-serif" font-size="12" fill="#666">Proyectos innovadores de nuestros alumnos de primaria.</text>
+  <text x="545" y="290" text-anchor="end" font-family="sans-serif" font-size="14" font-weight="600" fill="#032960">7</text>
+
+  <line x1="50" y1="335" x2="545" y2="335" stroke="#eee" stroke-width="1"/>
+
+  <text x="50" y="370" font-family="sans-serif" font-size="11" fill="#999" text-transform="uppercase">Primaria</text>
+  <text x="50" y="400" font-family="Georgia,serif" font-size="18" fill="#1a1a2e">Olimpiadas de matemática</text>
+  <text x="50" y="425" font-family="sans-serif" font-size="12" fill="#666">Felicitaciones a todos los participantes por su dedicación.</text>
+  <text x="545" y="400" text-anchor="end" font-family="sans-serif" font-size="14" font-weight="600" fill="#032960">11</text>
+
+  <line x1="50" y1="445" x2="545" y2="445" stroke="#eee" stroke-width="1"/>
+
+  <text x="50" y="480" font-family="sans-serif" font-size="11" fill="#999" text-transform="uppercase">Secundaria</text>
+  <text x="50" y="510" font-family="Georgia,serif" font-size="18" fill="#1a1a2e">Proyecto de lectura interdisciplinario</text>
+  <text x="50" y="535" font-family="sans-serif" font-size="12" fill="#666">Una experiencia que cruzó materias y despertó el amor por la lectura.</text>
+  <text x="545" y="510" text-anchor="end" font-family="sans-serif" font-size="14" font-weight="600" fill="#032960">15</text>
+
+  <line x1="50" y1="555" x2="545" y2="555" stroke="#eee" stroke-width="1"/>
+
+  <text x="50" y="590" font-family="sans-serif" font-size="11" fill="#999" text-transform="uppercase">Institucional</text>
+  <text x="50" y="620" font-family="Georgia,serif" font-size="18" fill="#1a1a2e">Entrevista al director</text>
+  <text x="50" y="645" font-family="sans-serif" font-size="12" fill="#666">Reflexiones sobre el año y los proyectos para el próximo ciclo.</text>
+  <text x="545" y="620" text-anchor="end" font-family="sans-serif" font-size="14" font-weight="600" fill="#032960">19</text>
+
+  <line x1="50" y1="665" x2="545" y2="665" stroke="#eee" stroke-width="1"/>
+
+  <text x="50" y="810" font-family="sans-serif" font-size="9" fill="#ccc">REVISTA NORBRIDGE · JULIO 2026 · PÁGINA 1</text>
+</svg>

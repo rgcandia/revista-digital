@@ -1,0 +1,43 @@
+{
+  "titulo": "Revista Norbridge",
+  "edicion": "Julio 2026",
+  "volumen": "Volumen XII · Número 3",
+  "pages": [
+    {
+      "id": 1,
+      "file": "/pages/01-portada.svg",
+      "type": "cover",
+      "label": "Portada"
+    },
+    {
+      "id": 2,
+      "file": "/pages/02-indice.svg",
+      "type": "toc",
+      "label": "Índice"
+    },
+    {
+      "id": 3,
+      "file": "/pages/03-acto-cierre.svg",
+      "type": "article",
+      "label": "Acto de cierre"
+    },
+    {
+      "id": 4,
+      "file": "/pages/04-feria-ciencias.svg",
+      "type": "article",
+      "label": "Feria de ciencias"
+    },
+    {
+      "id": 5,
+      "file": "/pages/05-olimpiadas.svg",
+      "type": "article",
+      "label": "Olimpiadas"
+    },
+    {
+      "id": 6,
+      "file": "/pages/06-entrevista.svg",
+      "type": "article",
+      "label": "Entrevista"
+    }
+  ]
+}
