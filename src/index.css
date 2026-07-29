@@ -102,9 +102,15 @@ body {
   margin: 0 auto;
   padding: 1rem;
   gap: 0.75rem;
-  height: 100vh;
+  height: 100dvh;
   min-height: 0;
   animation: revistaFadeIn 0.4s ease-out;
+}
+
+@supports not (height: 100dvh) {
+  .revista-container {
+    height: 100vh;
+  }
 }
 
 /* ─── Header ─────────────────────────────────────────────── */
@@ -178,6 +184,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 0;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -275,10 +282,16 @@ body {
   }
 
   .revista-container {
-    height: auto;
-    min-height: 100vh;
+    height: 100dvh;
+    min-height: 0;
     padding: 0.75rem;
     gap: 0.5rem;
+  }
+
+  @supports not (height: 100dvh) {
+    .revista-container {
+      height: 100vh;
+    }
   }
 
   .revista-header {

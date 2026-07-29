@@ -10,11 +10,14 @@ interface Page {
 }
 
 function useMobile() {
-  const [mobile, setMobile] = useState(window.innerWidth < 768)
+  const [mobile, setMobile] = useState(
+    window.matchMedia('(max-width: 767px)').matches
+  )
   useEffect(() => {
-    function handler() { setMobile(window.innerWidth < 768) }
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
+    const mq = window.matchMedia('(max-width: 767px)')
+    const handler = (e: MediaQueryListEvent) => setMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
   }, [])
   return mobile
 }
@@ -42,17 +45,17 @@ export default function RevistaDigital() {
     setCurrentPage(e.data)
   }, [])
 
-  function goTo(page: number) {
+  const goTo = useCallback((page: number) => {
     flipRef.current?.pageFlip()?.flip(page)
-  }
+  }, [])
 
-  function next() {
+  const next = useCallback(() => {
     flipRef.current?.pageFlip()?.flipNext()
-  }
+  }, [])
 
-  function prev() {
+  const prev = useCallback(() => {
     flipRef.current?.pageFlip()?.flipPrev()
-  }
+  }, [])
 
   function handleAbrir() {
     if (mobile) {
@@ -114,7 +117,7 @@ export default function RevistaDigital() {
               size="stretch"
               minWidth={280}
               maxWidth={1200}
-              minHeight={380}
+              minHeight={360}
               maxHeight={1400}
               drawShadow
               flippingTime={600}
@@ -126,8 +129,8 @@ export default function RevistaDigital() {
               mobileScrollSupport
               clickEventForward
               useMouseEvents
-              swipeDistance={0}
-              showPageCorners
+              swipeDistance={mobile ? 30 : 10}
+              showPageCorners={!mobile}
               disableFlipByClick={false}
               startPage={0}
               onFlip={onFlip}
