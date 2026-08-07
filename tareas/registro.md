@@ -27,7 +27,7 @@
 
 | ID | Estado | Descripción | Archivos |
 |----|--------|-------------|----------|
-Sin tareas pendientes
+| 005 | EN_PROGRESO | Animación portada: fade + scale (desktop y mobile) | index.css |
 
 ---
 
