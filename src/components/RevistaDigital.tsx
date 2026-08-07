@@ -29,12 +29,19 @@ export default function RevistaDigital() {
   const [abierto, setAbierto] = useState(false)
   const [animando, setAnimando] = useState(false)
   const [abriendoLibro, setAbriendoLibro] = useState(false)
+  const [fullscreen, setFullscreen] = useState(false)
   const mobile = useMobile()
   const totalPages = revistaData.pages.length
 
   useEffect(() => {
     if (mobile) setAbierto(true)
   }, [mobile])
+
+  useEffect(() => {
+    if (abierto && !mobile) {
+      setFullscreen(true)
+    }
+  }, [abierto, mobile])
 
   useEffect(() => {
     const timer = setTimeout(() => setReady(true), 300)
@@ -78,10 +85,24 @@ export default function RevistaDigital() {
     }
   }, [abriendoLibro])
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && fullscreen) {
+        setFullscreen(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [fullscreen])
+
+  function toggleMenu() {
+    setFullscreen(prev => !prev)
+  }
+
   const portada = revistaData.pages[0]
 
   return (
-    <div className="revista-wrapper">
+    <div className={`revista-wrapper ${fullscreen ? 'revista-wrapper--fullscreen' : ''}`}>
       {!abierto && (
         <div
           className={`revista-portada-layer ${animando ? 'revista-portada--moviendo' : ''}`}
@@ -93,8 +114,23 @@ export default function RevistaDigital() {
         </div>
       )}
 
-      <div className="revista-container">
-        {!mobile && (
+      {fullscreen && (
+        <button
+          className="revista-fs-menu-btn"
+          onClick={toggleMenu}
+          title="Menú"
+          aria-label="Abrir menú de navegación"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      )}
+
+      <div className={`revista-container ${fullscreen ? 'revista-container--fullscreen' : ''}`}>
+        {!mobile && !fullscreen && (
           <header className="revista-header">
             <div>
               <h1 className="revista-title">{revistaData.titulo}</h1>
@@ -104,6 +140,9 @@ export default function RevistaDigital() {
               <button onClick={prev} disabled={currentPage <= 0} className="revista-btn">← Anterior</button>
               <span className="revista-page-num">{currentPage + 1} / {totalPages}</span>
               <button onClick={next} disabled={currentPage >= totalPages - 1} className="revista-btn">Siguiente →</button>
+              <button onClick={toggleMenu} className="revista-btn revista-fs-toggle-btn" title="Pantalla completa">
+                ⛶
+              </button>
             </div>
           </header>
         )}
@@ -148,7 +187,7 @@ export default function RevistaDigital() {
           {!ready && <div className="revista-loading">Cargando revista...</div>}
         </div>
 
-        {mobile && (
+        {mobile && !fullscreen && (
           <div className="revista-mobile-controls">
             <button onClick={prev} disabled={currentPage <= 0} className="revista-btn">←</button>
             <span className="revista-page-num">{currentPage + 1} / {totalPages}</span>
@@ -156,14 +195,16 @@ export default function RevistaDigital() {
           </div>
         )}
 
-        <nav className="revista-thumbnails">
-          {revistaData.pages.map((page: Page, i: number) => (
-            <button key={page.id} onClick={() => goTo(i)}
-              className={`revista-thumb ${currentPage === i ? 'revista-thumb--active' : ''}`} title={page.label}>
-              <img src={page.file} alt={page.label} />
-            </button>
-          ))}
-        </nav>
+        {!fullscreen && (
+          <nav className="revista-thumbnails">
+            {revistaData.pages.map((page: Page, i: number) => (
+              <button key={page.id} onClick={() => goTo(i)}
+                className={`revista-thumb ${currentPage === i ? 'revista-thumb--active' : ''}`} title={page.label}>
+                <img src={page.file} alt={page.label} />
+              </button>
+            ))}
+          </nav>
+        )}
       </div>
     </div>
   )
