@@ -155,9 +155,9 @@ export default function RevistaDigital() {
               height={842}
               size="stretch"
               minWidth={280}
-              maxWidth={1200}
+              maxWidth={fullscreen ? 2000 : 1200}
               minHeight={360}
-              maxHeight={1400}
+              maxHeight={fullscreen ? 1200 : 1400}
               drawShadow
               flippingTime={600}
               usePortrait={mobile}

@@ -282,12 +282,7 @@ body {
 .revista-wrapper--fullscreen .revista-flip-wrapper {
   height: 100vh;
   height: 100dvh;
-}
-
-@supports not (height: 100dvh) {
-  .revista-wrapper--fullscreen .revista-flip-wrapper {
-    height: 100vh;
-  }
+  align-items: stretch;
 }
 
 .revista-wrapper--fullscreen .revista-flipbook {

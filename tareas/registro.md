@@ -10,6 +10,7 @@
 
 | Commit | Fecha | Descripción |
 |--------|-------|-------------|
+| `afec1a4` | 2026-08-07 | feat: modo fullscreen desktop con toggle menu |
 | `82fdbf3` | — | chore: trigger redeploy |
 | `59828ee` | — | feat: fondo foto portada + gradiente legible |
 | `fb19bbf` | — | feat: portada editorial con logo y pilares - optimizaciones responsive y rendimiento |
@@ -23,7 +24,9 @@
 
 ### 2026-08-07
 
-*(sin tareas pendientes)*
+| ID | Estado | Descripción | Archivos |
+|----|--------|-------------|----------|
+| 002 | COMPLETADA | Fullscreen: ampliar flipbook al máximo del viewport | `src/components/RevistaDigital.tsx`, `src/index.css` | `maxWidth`/`maxHeight` condicionales (2000×1200 en fullscreen vs 1200×1400 en normal), flip-wrapper con `align-items: stretch` |
 
 ---
 
