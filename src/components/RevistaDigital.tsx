@@ -51,10 +51,14 @@ export default function RevistaDigital() {
   }, [])
 
   useEffect(() => {
-    if (abierto) {
+    if (mobile) setAbierto(true)
+  }, [mobile])
+
+  useEffect(() => {
+    if (abierto && !mobile) {
       setFullscreen(true)
     }
-  }, [abierto])
+  }, [abierto, mobile])
 
   useEffect(() => {
     if (!cargando) {
