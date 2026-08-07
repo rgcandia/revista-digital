@@ -55,10 +55,10 @@ export default function RevistaDigital() {
   }, [mobile])
 
   useEffect(() => {
-    if (abierto && !mobile) {
+    if (abierto) {
       setFullscreen(true)
     }
-  }, [abierto, mobile])
+  }, [abierto])
 
   useEffect(() => {
     if (!cargando) {
