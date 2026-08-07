@@ -30,8 +30,25 @@ export default function RevistaDigital() {
   const [animando, setAnimando] = useState(false)
   const [abriendoLibro, setAbriendoLibro] = useState(false)
   const [fullscreen, setFullscreen] = useState(false)
+  const [cargando, setCargando] = useState(true)
   const mobile = useMobile()
   const totalPages = revistaData.pages.length
+
+  useEffect(() => {
+    const loadImages = revistaData.pages.map(
+      (page: Page) =>
+        new Promise<void>((resolve) => {
+          const img = new Image()
+          img.onload = () => resolve()
+          img.onerror = () => resolve()
+          img.src = page.file
+        })
+    )
+    const minTime = new Promise<void>((resolve) => setTimeout(resolve, 2000))
+    Promise.all([Promise.all(loadImages), minTime]).then(() => {
+      setCargando(false)
+    })
+  }, [])
 
   useEffect(() => {
     if (mobile) setAbierto(true)
@@ -44,9 +61,20 @@ export default function RevistaDigital() {
   }, [abierto, mobile])
 
   useEffect(() => {
-    const timer = setTimeout(() => setReady(true), 300)
-    return () => clearTimeout(timer)
-  }, [])
+    if (!cargando) {
+      const timer = setTimeout(() => setReady(true), 100)
+      return () => clearTimeout(timer)
+    }
+  }, [cargando])
+
+  useEffect(() => {
+    if (flipRef.current) {
+      const timer = setTimeout(() => {
+        flipRef.current?.pageFlip()?.update()
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [fullscreen])
 
   const onFlip = useCallback((e: { data: number }) => {
     setCurrentPage(e.data)
@@ -96,10 +124,21 @@ export default function RevistaDigital() {
   }, [fullscreen])
 
   function toggleMenu() {
-    setFullscreen(prev => !prev)
+    setFullscreen((prev) => !prev)
   }
 
   const portada = revistaData.pages[0]
+
+  if (cargando) {
+    return (
+      <div className="revista-splash">
+        <div className="revista-splash-content">
+          <div className="revista-splash-spinner" />
+          <p className="revista-splash-text">Cargando revista...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`revista-wrapper ${fullscreen ? 'revista-wrapper--fullscreen' : ''}`}>
