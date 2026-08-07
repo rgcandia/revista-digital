@@ -440,3 +440,31 @@ body {
     height: 44px;
   }
 }
+
+/* ─── Mobile: portada + fullscreen ─────────────────────────── */
+
+@media (max-width: 767px) {
+  .revista-portada--moviendo .revista-portada-tapa {
+    transform: translateY(-18vh) scale(0.85);
+    opacity: 0;
+  }
+
+  .revista-wrapper--fullscreen .revista-flip-wrapper {
+    min-height: 0;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .revista-wrapper--fullscreen .revista-container {
+    padding: 0;
+    gap: 0;
+  }
+
+  .revista-fs-menu-btn {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}

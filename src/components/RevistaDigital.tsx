@@ -51,14 +51,10 @@ export default function RevistaDigital() {
   }, [])
 
   useEffect(() => {
-    if (mobile) setAbierto(true)
-  }, [mobile])
-
-  useEffect(() => {
-    if (abierto && !mobile) {
+    if (abierto) {
       setFullscreen(true)
     }
-  }, [abierto, mobile])
+  }, [abierto])
 
   useEffect(() => {
     if (!cargando) {
@@ -93,15 +89,12 @@ export default function RevistaDigital() {
   }, [])
 
   function handleAbrir() {
-    if (mobile) {
-      setAbierto(true)
-      return
-    }
     setAnimando(true)
+    const duration = mobile ? 400 : 600
     setTimeout(() => {
       setAbierto(true)
-      setTimeout(() => setAbriendoLibro(true), 400)
-    }, 600)
+      setTimeout(() => setAbriendoLibro(true), mobile ? 200 : 400)
+    }, duration)
   }
 
   useEffect(() => {
