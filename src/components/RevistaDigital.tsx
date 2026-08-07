@@ -224,6 +224,7 @@ export default function RevistaDigital() {
             <button onClick={prev} disabled={currentPage <= 0} className="revista-btn">←</button>
             <span className="revista-page-num">{currentPage + 1} / {totalPages}</span>
             <button onClick={next} disabled={currentPage >= totalPages - 1} className="revista-btn">→</button>
+            <button onClick={toggleMenu} className="revista-btn revista-fs-toggle-btn" title="Pantalla completa">⛶</button>
           </div>
         )}
 
