@@ -10,6 +10,10 @@
 
 | Commit | Fecha | Descripción |
 |--------|-------|-------------|
+| `f4d80c5` | 2026-08-07 | feat: animacion portada fade+scale unificada desktop y mobile |
+| `acc7d4d` | 2026-08-07 | fix: boton fullscreen en controles mobile |
+| `e9f7a20` | 2026-08-07 | feat: flujo fullscreen + cover para mobile |
+| `a3057fc` | 2026-08-07 | feat: spinner de carga + fix bug tamaño fullscreen |
 | `b116e96` | 2026-08-07 | feat: flipbook fullscreen expandido al maximo del viewport |
 | `afec1a4` | 2026-08-07 | feat: modo fullscreen desktop con toggle menu |
 | `82fdbf3` | — | chore: trigger redeploy |
@@ -25,9 +29,7 @@
 
 ### 2026-08-07
 
-| ID | Estado | Descripción | Archivos |
-|----|--------|-------------|----------|
-| 005 | EN_PROGRESO | Animación portada: fade + scale (desktop y mobile) | index.css |
+*(sin tareas pendientes)*
 
 ---
 
@@ -46,7 +48,8 @@
 
 | ID | Descripción | Archivos | Detalle |
 |----|-------------|----------|---------|
-| 004 | Flujo fullscreen + cover para mobile | `src/components/RevistaDigital.tsx`, `src/index.css` | Mobile ahora ve portada antes de abrir (como desktop). Animación: slide-up + fade (translateY -18vh). Fullscreen activo por defecto. Botón ☰ flotante para toggle de controles y thumbnails. |
-| 003 | Spinner de carga + fix bug tamaño fullscreen | `src/components/RevistaDigital.tsx`, `src/index.css` | Splash screen con spinner dorado sobre fondo oscuro (mín 2s + precarga de 6 SVGs). Fix: transición de `opacity` 0.25s en vez de `max-width/padding` 0.4s + `update()` forzado del flipbook al cambiar fullscreen. |
-| 002 | Fullscreen: ampliar flipbook al máximo del viewport | `src/components/RevistaDigital.tsx`, `src/index.css` | maxWidth/maxHeight condicionales (2000×1200 vs 1200×1400), flip-wrapper con `align-items: stretch` |
-| 001 | Modo fullscreen en desktop | `src/components/RevistaDigital.tsx`, `src/index.css` | Flujo: portada → click → slide animado → flipbook en pantalla completa (fondo oscuro, sin header ni thumbnails). Botón ☰ flotante con blur. Escape para salir. Botón ⛶ en header. Mobile sin cambios. |
+| 005 | Animación portada: fade + scale unificado | `src/index.css` | Reemplaza slides direccionales por `scale(0.92) + opacity 0`, consistente en desktop y mobile. |
+| 004 | Flujo fullscreen + cover para mobile | `src/components/RevistaDigital.tsx`, `src/index.css` | Mobile ahora ve portada antes de abrir. Fullscreen activo por defecto. Botón ☰ flotante para toggle de controles y thumbnails. |
+| 003 | Spinner de carga + fix bug tamaño fullscreen | `src/components/RevistaDigital.tsx`, `src/index.css` | Splash screen con spinner dorado (mín 2s + precarga SVGs). Fix transición + update() forzado del flipbook. |
+| 002 | Fullscreen: ampliar flipbook al máximo | `src/components/RevistaDigital.tsx`, `src/index.css` | maxWidth/maxHeight condicionales (2000×1200 vs 1200×1400), flip-wrapper con `align-items: stretch`. |
+| 001 | Modo fullscreen en desktop | `src/components/RevistaDigital.tsx`, `src/index.css` | Flujo: portada → click → slide animado → flipbook fullscreen. Botón ☰ flotante. Escape. Botón ⛶ en header. |
